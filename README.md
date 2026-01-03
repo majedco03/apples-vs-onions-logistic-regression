@@ -52,13 +52,47 @@ To keep the learning objective clear, the project intentionally avoids:
 
 ---
 
-## Future Work
-After completing this baseline model, the project can be extended by:
-- Replacing Logistic Regression with a shallow Neural Network
-- Preserving spatial information using Convolutional Neural Networks (CNNs)
-- Comparing results against this baseline
-
----
-
 ## Key Goal
-The primary goal of this project is not performance, but **understanding** — specifically, understanding *why* Logistic Regression fails on image data and **when** more complex models become necessary.
+The primary goal of this project is not performance, but **understanding** — specifically, understanding *why* Logistic Regression fails on image data and *when* more complex models become necessary.
+
+## How to run
+follow these steps to set up the project and classify your own images
+
+1. Prerequisites
+Ensure you have Python installed. You will need to install the following libraries:
+NumPy: For vectorized mathematical operations.
+Pillow (PIL): For image loading and preprocessing (resizing and RGB conversion).
+
+You can install them via pip: 
+pip install numpy pillow
+
+2. Data Setup
+/train data
+    /apple  <-- Place apple training images here
+    /onion  <-- Place onion training images here
+/test data
+    /apple  <-- Place apple test images here
+    /onion  <-- Place onion test images here
+
+Note: The code expects images to be in .jpg, .jpeg, or .png format.
+Preprocessing: The code will automatically resize your images to 64 X 64 pixels and normalize them.
+
+3. Execution
+Run the main script to open the interactive menu:
+python Main.py
+
+4. Usage Flow
+  1. Select Option 1: This loads the data from your folders and trains the Logistic Regression model using gradient descent.
+
+  2. Select Option 2: View the accuracy of the model on both your training and test sets.
+
+  3. Select Option 3: Provide a path to a specific image file to see if the model classifies it as an Apple or an Onion.
+
+  4. Select Option 4: Exit the program
+
+
+
+Note: The learning rate is set to 0.5 and the model runs for 2000 iterations by defoult, you can change them if you want in Data.py
+
+# Note
+this Project is implemented after finishing week 2 of DeepLearning.AI course of Deep learning specialization
